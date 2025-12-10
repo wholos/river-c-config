@@ -17,6 +17,12 @@ int keymap() {
   	system("riverctl map normal Super F toggle-float");
 	// Keyboard bind
   	system("riverctl keyboard-layout -options \"grp:win_space_toggle\" \"us,ru\"");
+	// Switch bind
+	system("for i in $(seq 1 9); do "
+        	"riverctl map normal Super $i set-focused-tags $((1 << ($i - 1))); "
+        	"riverctl map normal Super+Shift $i set-view-tags $((1 << ($i - 1))); "
+	    "done"
+	);
 }
 
 int autostart() {
