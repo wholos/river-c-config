@@ -9,9 +9,9 @@ int keymap() {
 	// Base keybindings
 	char tty[256];
     	snprintf(tty, sizeof(tty), "riverctl map normal Super Z spawn %s", term);
-    	system(tty);
-    	snprintf(tty, sizeof(tty), "riverctl map normal Super R spawn %s", menu);
-    	system(tty);
+	system(tty);
+	snprintf(tty, sizeof(tty), "riverctl map normal Super R spawn %s", menu);
+	system(tty);
 	system("riverctl map normal Super C close");
   	system("riverctl map normal Super+Shift Q exit");
   	system("riverctl map normal Super F toggle-float");
@@ -26,10 +26,10 @@ int autostart() {
 	system("wireplumber");
 	// Start rivertile
 	system("riverctl default-layout rivertile");
-        system("rivertile -view-padding 0 -outer-padding 0 &");
-        // Start riverbar
-        system("riverctl spawn \"$HOME/.config/river/status\"");
-        system("riverctl spawn \"$HOME/.config/river/bar\"");
+	system("rivertile -view-padding 0 -outer-padding 0");
+	// Start riverbar
+	system("riverctl spawn \"$HOME/.config/river/status\"");
+    	system("riverctl spawn \"$HOME/.config/river/bar\"");
 }
 
 int main() {
