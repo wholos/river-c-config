@@ -1,2 +1,7 @@
-# river-c-config
-riverwm C config
+# C config for RiverWM
+
+**dependencies**
+``` bash
+gcc
+riverwm
+```
