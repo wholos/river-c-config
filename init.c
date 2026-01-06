@@ -41,6 +41,10 @@ int autostart() {
         system("rivertile -view-padding 0 -outer-padding 0 &");
         // Start notify
         system("mako &");
+        // Start xdg-desktop-portals
+        system("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP");
+        system("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river");
+        system("systemctl --user restart xdg-desktop-portal");
 }
 
 int main() {
